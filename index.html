@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Madinabonu</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .triangle {
+        height: 200px;
+        width: 200px;
+        border: 1px red solid;
+      }
+      .rectangle {
+        height: 200px;
+        width: 200px;
+        border: 1px blue solid;
+      }
+      .circle {
+        height: 200px;
+        width: 200px;
+        border: 1px green solid;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="triangle"></canvas>
+    <canvas id="rectangle"></canvas>
+    <canvas id="circle"></canvas>
+    <script>
+      const triangle = document.getElementById("triangle");
+      const rectangle = document.getElementById("rectangle");
+      const circle = document.getElementById("circle");
+
+      const triangleCtx = triangle.getContext("2d");
+      const rectangleCtx = rectangle.getContext("2d");
+      const circleCtx = circle.getContext("2d");
+
+      triangleCtx.beginPath();
+      triangleCtx.moveTo(150, 0);
+      triangleCtx.lineTo(50, 150);
+      triangleCtx.lineTo(250, 150);
+      triangleCtx.closePath();
+      triangleCtx.fillStyle = "#FF0000";
+      triangleCtx.fill();
+
+      rectangleCtx.beginPath();
+      rectangleCtx.rect(25, 25, 250, 120);
+      rectangleCtx.fillStyle = "#0000FF";
+      rectangleCtx.fill();
+
+      circleCtx.beginPath();
+      circleCtx.arc(150, 75, 70, 10, 12 * Math.PI);
+      circleCtx.fillStyle = "	#008000";
+      circleCtx.fill();
+    </script>
+  </body>
+</html>
